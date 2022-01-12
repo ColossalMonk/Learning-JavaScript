@@ -1,4 +1,4 @@
 # Learning JavaScript
-<h5> This repo is for beginner friendly guide to learning JavaScript </h5>
+<h5> This repo is a beginner friendly guide for learning JavaScript </h5>
 
 

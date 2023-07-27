@@ -1,6 +1,4 @@
-# Learning JavaScript 🚀📚🌟
-
-![JavaScript Logo](https://github.com/ColossalMonk/Learning-JavaScript/blob/main/assets/javascript-logo.png)
+<h1>Learning JavaScript 🚀📚🌟 <img src="https://github.com/ColossalMonk/Learning-JavaScript/blob/main/assets/javascript-logo.png" alt="Javascript Logo" width="100px" height="100px" align="right"></h1>
 
 Welcome to the "Learning JavaScript" repository! 🎉
 
@@ -40,6 +38,6 @@ Learning JavaScript is an exciting and rewarding journey, and we're thrilled to 
 
 Keep coding and keep exploring! 🚀🌟
 
-![JavaScript GIF](https://github.com/ColossalMonk/Learning-JavaScript/blob/main/assets/javascript-gif.gif)
+![JavaScript GIF](https://github.com/ColossalMonk/Learning-JavaScript/blob/main/assets/JS-code.gif)
 
 ---

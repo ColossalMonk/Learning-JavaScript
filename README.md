@@ -1,4 +1,4 @@
-<h1>Learning JavaScript 🚀📚🌟 <img src="https://github.com/ColossalMonk/Learning-JavaScript/blob/main/assets/javascript-logo.png" alt="Javascript Logo" width="100px" height="100px" align="right" /></h1>
+# Learning JavaScript 🚀📚🌟 <img src="https://github.com/ColossalMonk/Learning-JavaScript/blob/main/assets/javascript-logo.png" alt="Javascript Logo" width="100px" height="100px" align="right" />
 
 Welcome to the "Learning JavaScript" repository! 🎉
 
@@ -32,6 +32,7 @@ JavaScript is the language of the web and the backbone of modern web development
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript): The official documentation by Mozilla Developer Network is a comprehensive resource for JavaScript.
 - [JavaScript30](https://javascript30.com/): A free 30-day coding challenge by Wes Bos to sharpen your JavaScript skills with fun projects.
 - [Javascript Basics](https://www.youtube.com/watch?v=dOnAC2Rr-6A): Youtube video that I personally followed to learn JS
+- [Javascript Info](https://javascript.info/): The Modern JavaScript Tutorial. How it's done now. From the basics to advanced topics with simple, but detailed explanations.
 
 ## Let's Learn Together! 🌈🤩
 

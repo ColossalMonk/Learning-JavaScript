@@ -94,8 +94,8 @@ let y1 = -2;
 console.log(+y); // -2
 
 // Converts non-numbers
-alert(+true); // 1
-alert(+"");   // 0
+console.log(+true); // 1
+console.log(+"");   // 0
 
 // The need to convert strings to numbers arises very often. For example, if we are getting values from HTML form fields, they are usually strings. What if we want to sum them?
 
@@ -174,138 +174,72 @@ console.log("n1 = n1 * 2 -> " + n1);
 n1 = 2;
 n1 += 5; // now n = 7 (same as n = n + 5)
 n1 *= 2; // now n = 14 (same as n = n * 2)
-/*
-Short “modify-and-assign” operators exist for all arithmetical and bitwise operators: /=, -=, etc.
 
-Such operators have the same precedence as a normal assignment, so they run after most other calculations:
+// Short “modify-and-assign” operators exist for all arithmetical and bitwise operators: /=, -=, etc.
 
-let n = 2;
+n1 = 2;
+console.log("n1 = 2 -> " + n1);
+n1 *= 3 + 5; // right part evaluated first, same as n *= 8
+console.log("n1 *= 3 + 5 -> " + n1);
+console.log("n1 -> " + n1)
 
-n *= 3 + 5; // right part evaluated first, same as n *= 8
+// ==========> Increment/decrement <==========
 
-alert( n ); // 16
-Increment/decrement
-Increasing or decreasing a number by one is among the most common numerical operations.
+// Increasing or decreasing a number by one is among the most common numerical operations.
 
-So, there are special operators for it:
-
-Increment ++ increases a variable by 1:
+// Increment ++ increases a variable by 1:
 
 let counter = 2;
+console.log("counter -> " + counter);
+
 counter++;        // works the same as counter = counter + 1, but is shorter
-alert( counter ); // 3
-Decrement -- decreases a variable by 1:
+console.log("counter++ -> " + counter);
 
-let counter = 2;
+// Decrement -- decreases a variable by 1:
+
+counter = 2;
+console.log("counter -> " + counter);
 counter--;        // works the same as counter = counter - 1, but is shorter
-alert( counter ); // 1
-Important:
-Increment/decrement can only be applied to variables. Trying to use it on a value like 5++ will give an error.
+console.log("counter-- -> " + counter);
 
-The operators ++ and -- can be placed either before or after a variable.
+// When the operator goes after the variable, it is in “postfix form”: counter++.
+// The “prefix form” is when the operator goes before the variable: ++counter.
+// Both of these statements do the same thing: increase counter by 1.
+// The operators ++ and -- can be placed either before or after a variable.
 
-When the operator goes after the variable, it is in “postfix form”: counter++.
-The “prefix form” is when the operator goes before the variable: ++counter.
-Both of these statements do the same thing: increase counter by 1.
+counter = 1;
+console.log("counter -> " + counter);
 
-Is there any difference? Yes, but we can only see it if we use the returned value of ++/--.
+let prefixCounter = ++counter;
+console.log("prefixCounter -> " + prefixCounter);
 
-Let’s clarify. As we know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
+let postfixCounter = counter++;
+console.log("postfixCounter -> " + postfixCounter);
 
-To see the difference, here’s an example:
-
-let counter = 1;
-let a = ++counter; // (*)
-
-alert(a); // 2
-In the line (*), the prefix form ++counter increments counter and returns the new value, 2. So, the alert shows 2.
-
-Now, let’s use the postfix form:
-
-let counter = 1;
-let a = counter++; // (*) changed ++counter to counter++
-
-alert(a); // 1
-In the line (*), the postfix form counter++ also increments counter but returns the old value (prior to increment). So, the alert shows 1.
-
-To summarize:
-
-If the result of increment/decrement is not used, there is no difference in which form to use:
-
-let counter = 0;
+counter = 0;
 counter++;
 ++counter;
-alert( counter ); // 2, the lines above did the same
-If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:
+console.log("counter -> " + counter); // 2, the lines above did the same
 
-let counter = 0;
-alert( ++counter ); // 1
-If we’d like to increment a value but use its previous value, we need the postfix form:
+// =========> Bitwise operators <==========
 
-let counter = 0;
-alert( counter++ ); // 0
-Increment/decrement among other operators
-The operators ++/-- can be used inside expressions as well. Their precedence is higher than most other arithmetical operations.
+// Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
 
-For instance:
+// The list of operators:
 
-let counter = 1;
-alert( 2 * ++counter ); // 4
-Compare with:
+// AND ( & )
+// OR ( | )
+// XOR ( ^ )
+// NOT ( ~ )
+// LEFT SHIFT ( << )
+// RIGHT SHIFT ( >> )
+// ZERO-FILL RIGHT SHIFT ( >>> )
 
-let counter = 1;
-alert( 2 * counter++ ); // 2, because counter++ returns the "old" value
-Though technically okay, such notation usually makes code less readable. One line does multiple things – not good.
+// ==========> Comma <==========
 
-While reading code, a fast “vertical” eye-scan can easily miss something like counter++ and it won’t be obvious that the variable increased.
+// The comma operator allows us to evaluate several expressions, dividing them with a comma ,. Each of them is evaluated but only the result of the last one is returned.
 
-We advise a style of “one line – one action”:
+let num = (1 + 2, 3 + 4);
+console.log("num -> " + num); // 7 (the result of 3 + 4)
 
-let counter = 1;
-alert( 2 * counter );
-counter++;
-Bitwise operators
-Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
-
-These operators are not JavaScript-specific. They are supported in most programming languages.
-
-The list of operators:
-
-AND ( & )
-OR ( | )
-XOR ( ^ )
-NOT ( ~ )
-LEFT SHIFT ( << )
-RIGHT SHIFT ( >> )
-ZERO-FILL RIGHT SHIFT ( >>> )
-These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won’t need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the Bitwise Operators chapter on MDN when a need arises.
-
-Comma
-The comma operator , is one of the rarest and most unusual operators. Sometimes, it’s used to write shorter code, so we need to know it in order to understand what’s going on.
-
-The comma operator allows us to evaluate several expressions, dividing them with a comma ,. Each of them is evaluated but only the result of the last one is returned.
-
-For example:
-
-let a = (1 + 2, 3 + 4);
-
-alert( a ); // 7 (the result of 3 + 4)
-Here, the first expression 1 + 2 is evaluated and its result is thrown away. Then, 3 + 4 is evaluated and returned as the result.
-
-Comma has a very low precedence
-Please note that the comma operator has very low precedence, lower than =, so parentheses are important in the example above.
-
-Without them: a = 1 + 2, 3 + 4 evaluates + first, summing the numbers into a = 3, 7, then the assignment operator = assigns a = 3, and the rest is ignored. It’s like (a = 1 + 2), 3 + 4.
-
-Why do we need an operator that throws away everything except the last expression?
-
-Sometimes, people use it in more complex constructs to put several actions in one line.
-
-For example:
-
-// three operations in one line
-for (a = 1, b = 3, c = a * b; a < 10; a++) {
- ...
-}
-Such tricks are used in many JavaScript frameworks. That’s why we’re mentioning them. But usually they don’t improve code readability so we should think well before using them.
-*/
+// Here, the first expression 1 + 2 is evaluated and its result is thrown away. Then, 3 + 4 is evaluated and returned as the result.

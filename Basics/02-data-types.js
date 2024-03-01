@@ -17,7 +17,7 @@ console.log(n);
 
 // We can get it as a result of division by zero:
 
-console.log( 1 / 0 ); // Infinity
+console.log("1 / 0 -> " + 1 / 0 ); // Infinity
 
 //Or just reference it directly:
 
@@ -43,8 +43,8 @@ console.log( "not a number" / 2 - 1 ); // NaN
 
 // For example, these two numbers (right above the safe range) are the same:
 
-console.log(9007199254740991 + 1); // 9007199254740992
-console.log(9007199254740991 + 2); // 9007199254740992
+console.log("9007199254740991 + 1 -> " + 9007199254740991 + 1); // 9007199254740992
+console.log("9007199254740991 + 2 -> " + 9007199254740991 + 2); // 9007199254740992
 
 // So to say, all odd integers greater than (2^53-1) can’t be stored at all in the “number” type.
 
@@ -63,7 +63,7 @@ const bigInt = 1234567890123456789012345678901234567890n;
 
 let str1 = "Hello";
 let str2 = 'Single quotes are ok too';
-let phrase = `can embed another ${str1}`;
+let phrase = `can embed another string like. str1 -> ${str1}`;
 console.log(str1);
 console.log(str2);
 console.log(phrase);
@@ -87,7 +87,7 @@ console.log( `the result is ${1 + 2}` ); // the result is 3
 
 // Please note that this can only be done in backticks. Other quotes don’t have this embedding functionality!
 
-console.log( "the result is ${1 + 2}" ); // the result is ${1 + 2} (double quotes do nothing)
+console.log( "the result is ${1 + 2}, double quotes do nothing" ); // the result is ${1 + 2} (double quotes do nothing)
 
 // ==========> Boolean <=========
 
